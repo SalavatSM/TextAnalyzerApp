@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Результаты анализа</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Результаты анализа</h1>
+            <p>Количество слов: {{ word_count }}</p>
+            <p>Количество предложений: {{ sentence_count }}</p>
+            <h2 class="subtitle">Самые частые слова:</h2>
+            <ul>
+                {% for word, frequency in word_frequencies %}
+                    <li>{{ word }}: {{ frequency }}</li>
+                {% endfor %}
+            </ul>
+            <a href="{% url 'index' %}" class="button is-primary">Назад</a>
+        </div>
+    </section>
+</body>
+</html>
